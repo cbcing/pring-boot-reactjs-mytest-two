@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>SpringBoot &amp; React | Progressive Webapp Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="root" th:utext="${content}"></div>
+
+<script src="/app.bundle.js"></script>
+<script th:inline="javascript">
+    window.INITIAL_PRODUCTS = [[${initialProducts}]];
+    window.INITIAL_SORTBY = [[${initialSortBy}]];
+    window.renderClient (INITIAL_PRODUCTS, INITIAL_SORTBY);
+</script>
+
+</body>
+</html>
